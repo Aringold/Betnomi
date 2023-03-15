@@ -1,0 +1,42 @@
+.overlay{
+  position: fixed !important;
+  top: 0;
+  left: 0px;
+  height: 100vh;
+  width: 100%;
+  background-color: #222638ed;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper{
+  text-align: center;
+
+  & > .icon{
+    color: #6AD035;
+  }
+
+  & > .title{
+    color: #6AD035;
+    font-size: 24px;
+    margin-top: 24px;
+  }
+
+  & > p{
+    width: 480px;
+    margin-top: 14px;
+    font-size: 16px;
+    font-weight: 400;
+
+    @media (max-width: 768px) {
+      width: 90%;
+      margin-left: 5%;
+    }
+  }
+
+  & > .button{
+    margin: 24px auto;
+  }
+}

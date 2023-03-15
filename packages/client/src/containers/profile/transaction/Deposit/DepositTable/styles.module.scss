@@ -1,0 +1,92 @@
+@import "~@betnomi/libs/assets/styles/_mixins";
+@import "~@betnomi/libs/assets/styles/variables";
+
+.table {
+  //for padding and - margin
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+
+
+.head {
+  background:var(--color-profile-table-head-background);
+}
+
+.row_tr{
+  cursor: pointer;
+
+  td{
+   transition: 0.3s;
+  }
+  
+  &:hover{
+    td{
+      background-color: #272B3F;
+    }
+  }
+}
+
+.tr {
+  padding-left: 32px;
+
+  @media(max-width: 768px) {
+    padding-left: 24px;
+  }
+}
+
+.th {
+  text-align: left;
+  padding: 16px;
+  font-family: Inter;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--color-icon);
+  white-space: nowrap;
+
+}
+
+.td_link{
+  @include flexbox(center, flex-start);
+
+  i{
+    margin: 0;
+    width: 15px;
+  }
+  svg, i{
+    margin-left: 8px;
+  }
+
+  span{
+    min-width: 105px;
+  }
+}
+
+.td {
+  text-align: left;
+  padding: 16px ;
+
+  font-family: Inter;
+  font-size: 14px;
+  line-height: 18px;
+
+  color: var(--color-white);
+  @media(max-width: 768px) {
+    white-space: nowrap;
+  }
+}
+
+.coin_name {
+  display: flex;
+  & > p {
+    margin-right: 10px;
+  }
+}
+
+.td_m {
+  padding-left:32px;
+
+  @media(max-width: 768px) {
+    padding-left: 24px;
+  }
+}

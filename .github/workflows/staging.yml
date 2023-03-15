@@ -1,0 +1,39 @@
+name: Staging
+
+
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  Build_and_deploy:
+    runs-on: [ ubuntu-latest ]
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Install yarn and deps
+        shell: bash
+        run: |
+          npm install --global yarn
+
+      - name: Build frontend
+        shell: bash
+        run: |
+          yarn install
+          yarn build:client
+
+      - name: Deploy to staging
+        env:
+            SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }} 
+        run: |
+          echo "$SSH_PRIVATE_KEY" > ./betnomi_private_key.pem
+          chmod 600 ./betnomi_private_key.pem
+          scp -o StrictHostKeyChecking=no -i  ./betnomi_private_key.pem  -r ./packages/client/build/* root@3.139.104.166:/var/www/html/betnomi-frontend/client/build
+    

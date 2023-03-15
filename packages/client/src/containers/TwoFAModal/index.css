@@ -1,0 +1,20 @@
+.inSignInPupoup .ReactInputVerificationCode__container{
+  width: 100% !important;
+}
+
+.inSignInPupoup .ReactInputVerificationCode__item{
+  width: 48px !important;
+  height: 44px !important;
+  line-height: 44px !important;
+  border-radius: 8px !important;
+  color: white !important;
+  background-color: #212536 !important;
+  box-shadow: none !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  box-sizing: border-box !important;
+}
+
+.inSignInPupoup .ReactInputVerificationCode__item.is-active{
+  border: 1px solid white !important;
+}

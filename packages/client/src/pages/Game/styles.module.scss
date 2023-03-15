@@ -1,0 +1,129 @@
+@import "~@betnomi/libs/assets/styles/variables";
+@import "~@betnomi/libs/assets/styles/mixins";
+
+
+.gameFrameWrapper{
+  margin: 7px auto;
+  transition: all $transition-time;
+
+  &.isChatActive{
+    margin: 40px auto;
+  }
+
+  .gameFullScreen{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+
+.page {
+  padding: 0px $main_layout_padding 32px;
+  max-width: 1500px;
+  margin: 100px auto 0px;
+  transition: padding $transition-time;
+}
+
+@media(max-width: 768px) {
+  .page {
+    padding: 15px;
+    h4 {
+      font-size: 18px;
+    }
+  }
+}
+
+
+.list {
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+  .trending {
+    @include aspect-ratio(220,280);
+  }
+}
+
+.title {
+  margin-bottom: 22px;
+}
+
+
+.listItem {
+  width: 100%;
+  height: 220px;
+  border-radius: 12px;
+  background-color: var(--color-gray-40);
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    .overlay {
+      opacity: 1;
+    }
+  }
+
+  &.listItemBanner {
+    background: url("../../../../libs/assets/img/Union.png") no-repeat top right/contain, var(--color-black);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+
+    .popularIcon {
+      width: 48px;
+      height: 48px;
+      background-color: var(--color-brand);
+      @include flexbox(center, center);
+      border-radius: 12px;
+    }
+
+    .playOver {
+      max-width: 220px;
+    }
+
+    & > div {
+      margin-top: auto;
+      @include flexbox(center, space-between);
+
+      i {
+        color: var(--color-button);;
+      }
+
+      i:before {
+        margin: 0;
+      }
+    }
+
+    .games {
+      color: var(--color-brand);
+    }
+  }
+}
+
+.bgrImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+.cap {
+  width: 100%;
+  height: 100%;
+  background-color: #23283c;
+}
+
+.banners {
+
+  :global {
+    .swiper-slide {
+      & > img {
+        height: 280px;
+
+        @media(max-width: 768px) {
+          height: 240px;
+        }
+      }
+    }
+  }
+}

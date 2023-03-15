@@ -1,0 +1,113 @@
+@import "~@betnomi/libs/assets/styles/variables";
+@import "~@betnomi/libs/assets/styles/mixins";
+
+.page {
+  margin: 48px;
+
+  h1{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 48px;
+    margin-bottom: 24px;
+  }
+
+  .subTitle{
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 32px;
+    max-width: 630px;
+
+    span{
+      color: var(--color-brand);
+      position: relative;
+      cursor: pointer;
+
+      &:after{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        width: 100%;
+        opacity: 0.2;
+        background-color: var(--color-brand);
+      }
+    }
+  }
+
+  @media(max-width: 768px)  {
+    padding: 25px 15px;
+    margin: 0;
+  }
+}
+
+
+.tabs {
+  margin-top: 48px;
+}
+
+.topBlock{
+  @include flexbox(center, space-between);
+
+  .rewardsList{
+    @include flexbox(center, flex-start);
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li:not(:last-child){
+      margin-right: 32px;
+    }
+
+    p{
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    span{
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 18px;
+      color: var(--color-button);
+    }
+  }
+
+  .rouletteImg{
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media(max-width: 768px) {
+    flex-wrap: wrap;
+
+    .rouletteImg{
+      max-width: 200px;
+      margin: 0 auto;
+    }
+
+    .rewardsList{
+      flex-wrap: wrap;
+
+      li{
+        margin-bottom: 10px;
+      }
+    }
+
+    h1{
+      font-size: 24px;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .subTitle{
+      font-size: 18px;
+      line-height: 1.2;
+    }
+  }
+}

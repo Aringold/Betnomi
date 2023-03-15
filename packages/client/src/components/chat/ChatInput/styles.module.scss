@@ -1,0 +1,149 @@
+@import '~@betnomi/libs/assets/styles/mixins';
+
+.wrapper {
+  @include flexbox(stretch, stretch);
+  flex-direction: column;
+  position: relative;
+
+  &.disabled {
+    opacity: 0.5;
+  }
+}
+
+.input_wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.submit {
+  border-radius: 50%;
+  margin-left: 8px;
+  background-color: var(--color-brand);
+  color: var(--color-white);
+  transition: all $transition-time;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  @include flexbox(stretch, stretch);
+  position: relative;
+  width: 100%;
+  flex-direction: row;
+  background-color: var(--color-chat-input);
+  border-radius: 20px;
+  &.active {
+    width: calc(100% - 40px - 8px)
+  }
+
+  textarea {
+    background-color: transparent;
+    border: none;
+    padding: 12px 12px;
+    flex: 1;
+    font-weight: var(--weight-500);
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--color-chat-input-text);
+    box-sizing: border-box;
+    transition: all $transition-time;
+    max-height: 100px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  input {
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    padding: 10px 16px;
+    flex: 1;
+    font-weight: var(--weight-500);
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--color-chat-input-text);
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &_icon {
+    @include flexbox(flex-start, flex-start);
+    flex: 0 0 32px;
+    width: 32px;
+    height: 100%;
+    color: var(--color-chat-input-text);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding-top: 8px;
+  }
+}
+
+.buttons {
+  @include flexbox(center, stretch);
+
+  flex-direction: row;
+  color: var(--color-chat-input-text);
+  font-weight: var(--weight-500);
+  font-size: 12px;
+  line-height: 16px;
+
+  & > * {
+    margin: 0 8px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.button {
+  @include flexbox(center, center);
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+
+  &_icon {
+    margin-right: 8px;
+  }
+}
+
+.separator {
+  @include flexbox(center, center);
+
+  flex: 0 0 1px;
+  height: 24px;
+  width: 1px;
+  background-color: var(--color-line-1);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.attach {
+  position: relative;
+
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+}

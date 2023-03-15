@@ -1,0 +1,63 @@
+@import "~@betnomi/libs/assets/styles/mixins";
+
+.games {
+  padding: 30px 0;
+
+  .trending {
+    @include aspect-ratio(220,280);
+  }
+  .slots {
+    @include aspect-ratio(168,220);
+  }
+  .liveCasino {
+    @include aspect-ratio(350,220);
+  }
+  .game {
+    @include aspect-ratio(130,80);
+  }
+
+  @media(max-width: 768px)  {
+    padding: 22px 15px 30px 15px;
+  }
+}
+
+.addMargin {
+  margin-bottom: 64px !important;
+}
+
+.addMarginLast{
+  margin-bottom: 32px;
+}
+
+.list {
+  &:not(:last-child){
+    margin-bottom: 32px;
+
+    @media(max-width: 374px) {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.banners {
+  margin: 40px 0 10px;
+
+  @media(max-width: 768px)  {
+    margin: 10px 0;
+    padding: 0 10px;
+  }
+}
+
+.desktopBanner {
+  margin-top: 0;
+}
+
+.categories {
+  margin: 14px 0;
+}
+
+.hr {
+  border: 1px solid #212536;
+}
+
+

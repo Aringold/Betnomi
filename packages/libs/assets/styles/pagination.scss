@@ -1,0 +1,56 @@
+#react-paginate ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+
+  @media(max-width: 768px) {
+    margin-bottom: 10px;
+  }
+}
+
+#react-paginate li {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 5px;
+
+  @media(max-width: 768px) {
+    margin-right: 3px;
+  }
+}
+
+#react-paginate li a {
+  width: 32px;
+  height: 32px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #696E87;
+  border-radius: 8px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+
+  &:hover{
+    background-color: #272B3F;
+  }
+
+  @media(max-width: 768px) {
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+  }
+}
+
+#react-paginate li.active {
+  background: #6AD035;
+
+  a{
+    color: #fff;
+    &:hover{
+      background: #6AD035;
+    }
+  }
+}

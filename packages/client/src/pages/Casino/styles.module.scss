@@ -1,0 +1,175 @@
+@import "~@betnomi/libs/assets/styles/variables";
+@import "~@betnomi/libs/assets/styles/mixins";
+
+@mixin listItemBanner($disableAspectRatio: false) {
+  &.listItemBanner{
+    width: 100%;
+    height: auto;
+    background:  url("../../../../libs/assets/img/Union.png")no-repeat top right/contain, var(--color-black);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    min-height: 20px;
+    @include aspect-ratio(344,220, $disableAspectRatio);
+
+    .popularIcon{
+      width: 48px;
+      height: 48px;
+      background-color: var(--color-brand);
+      @include flexbox(center, center);
+      border-radius: 12px;
+    }
+
+    .playOver{
+      max-width: 220px;
+    }
+
+    & > div{
+      margin-top: auto;
+      @include flexbox(center, space-between);
+
+      i{
+        color: var(--color-button);;
+      }
+
+      i:before{
+        margin: 0;
+      }
+    }
+
+    .games{
+      color: var(--color-brand);
+    }
+  }
+}
+
+.page {
+  padding: 40px $main_layout_padding 32px $main_layout_padding ;
+  max-width: 1500px;
+  margin: 0 auto;
+
+  @media(max-width: 768px)  {
+    padding: 25px 15px;
+
+    h4{
+      font-size: 18px;
+    }
+  }
+}
+
+.list {
+  &:not(:last-child){
+    margin-bottom: 54px;
+  }
+}
+
+.title{
+  margin-bottom: 22px;
+}
+
+
+.mustPlayList{
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+  .bigBanner {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    background-color: var(--color-gray-40);
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    @include listItemBanner;
+  }
+
+  .listItem{
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    @include aspect-ratio(164,226);
+
+    &:first-child{
+      grid-column-start: 1;
+      grid-column-end: 3;
+      @include aspect-ratio(344,220);
+    }
+
+    .img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: 50% 80%;
+    }
+
+    &:hover{
+      .overlay{
+        opacity: 1;
+      }
+    }
+
+    @include listItemBanner
+  }
+
+  @media(max-width: 940px) {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 16px;
+  }
+
+  @media(max-width: 500px) {
+    .listItem {
+      &:first-child{
+        height: 240px;
+      }
+    }
+  }
+
+  @media(max-width: 374px)  {
+    grid-gap: 12px;
+
+  }
+}
+@media(max-width: 500px) {
+  .bigBanner {
+    @supports (-webkit-appearance:none) {
+      height: 240px !important;
+    }
+  }
+}
+.noImage {
+  background-color: var(--color-gray-40);
+}
+
+.banners{
+
+  :global {
+    .swiper-slide {
+      & >  img {
+        height: auto;
+        @include aspect-ratio(448,280);
+      }
+    }
+  }
+}
+
+.addMargin {
+  margin-top: 20px;
+  margin-bottom: 32px;
+  @media (max-width: 768px) {
+    margin-bottom: 25px;
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: space-around;
+}
+

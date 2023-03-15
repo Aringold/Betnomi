@@ -1,0 +1,33 @@
+.annotation {
+    color: var(--color-brand);
+}
+
+.amount {
+    display: inline-flex;
+    align-items: center;
+}
+
+.amountContainer {
+    display: flex;
+    flex-direction: column;
+    background-color:  #30354B;
+    border: 1px solid #3B415A;
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 10px;
+    .title {
+        font-weight: 700;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .amountRow {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4px;
+    }
+
+    .buttonWrapper {
+        margin-top: 6px;
+    }
+}

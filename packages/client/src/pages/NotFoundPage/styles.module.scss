@@ -1,0 +1,46 @@
+
+.wrapper{
+  width: 100%;
+  padding-top: 80px;
+  @media(max-width: 768px){
+    padding-top: 30px;
+  }
+}
+
+.wrapper * {
+  font-family: Poppins;
+}
+
+.logo{
+  text-align: center;
+  img{
+    max-width: 100%;
+  }
+}
+
+.content{
+  text-align: center;
+  padding: 30px 10px;
+  h2{
+    font-size: 24px;
+    margin-bottom: 16px;
+    @media(max-width: 768px){
+      font-size: 20px;
+    }
+  }
+  p{
+    font-size: 18px;
+    @media(max-width: 768px){
+     font-size: 16px;
+    }
+  }
+  .homeBtn{
+    margin: 32px auto 0;
+  }
+}
+
+
+
+
+
+

@@ -1,0 +1,100 @@
+@import './variables';
+
+$defaultFlexBoxAlign: center;
+$defaultFlexBoxJustify: center;
+
+@mixin flexbox($align: $defaultFlexBoxAlign, $justify: $defaultFlexBoxJustify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin separator_right($height: 36px, $color: var(--color-line-1)) {
+  &::after {
+    content: ' ';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    height: $height;
+    width: 1px;
+    background-color: $color;
+    transform: translate(0, -50%);
+  }
+}
+
+@mixin hidden() {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+}
+
+@mixin ellipsis($max-width) {
+  max-width: $max-width;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin with_scrollbar($background: var(--color-background), $color: var(--color-brand)) {
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: 3px solid $background;
+    background-color: $color;
+  }
+}
+
+@mixin max_dropdown_height {
+  max-height: 40vh;
+}
+
+// Media request mixins MobileFirst
+@mixin for_mobile {
+  @media screen and (max-width: 380px) {
+    @content;
+  }
+}
+
+@mixin for_large_mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin for_tablet {
+  @media screen and (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin for_breakpoint_width($max-width) {
+  @media screen and (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin aspect-ratio($width, $height, $disable: true) {
+  @if $disable {
+    @media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance:none) {
+        position: relative;
+        &:before {
+          display: block;
+          content: "";
+          width: 100%;
+          padding-top: ($height / $width) * 100%;
+        }
+        & > * {
+          position: absolute;
+          top: 0;
+          bottom: 0; /* vertical center */
+          left: 0;
+          right: 0; /* horizontal center */
+        }
+      }
+    }
+  }
+  aspect-ratio: $width / $height;
+}

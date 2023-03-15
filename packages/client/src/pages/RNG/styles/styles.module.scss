@@ -1,0 +1,21 @@
+@import "~@betnomi/libs/assets/styles/variables";
+@import "~@betnomi/libs/assets/styles/_mixins";
+
+.page {
+  padding: 32px $main_layout_padding 52px $main_layout_padding ;
+  max-width: 1500px;
+  margin: 0 auto;
+  font-family: Poppins;
+
+  @media(max-width: 768px)  {
+    padding: 25px 15px;
+  }
+}
+
+.description{
+  p{
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+  }
+}

@@ -1,0 +1,80 @@
+.factor {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px dashed var(--color-line-1);
+  padding-bottom: 8px;
+}
+
+.tittle {
+  display: flex;
+  margin-bottom: 16px;
+  font-weight: 500;
+  img {
+    margin-right: 14px;
+  }
+}
+
+.label {
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  color: var(--color-icon);
+  span {
+    color: var(--color-brand);
+  }
+}
+
+.qr_description {
+  margin-bottom: 32px;
+}
+
+.secret_key_wrap {
+  margin-bottom: 32px;
+}
+.qr {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 21px;
+  margin-bottom: 16px;
+  background-color: var(--color-background-mesg);
+}
+
+.verification_wrap {
+  padding-top: 24px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
+}
+
+.verification {
+  margin: 24px 0px;
+}
+
+.password_input {
+  background-color: #272b3f;
+  margin-bottom: 32px;
+
+  :-webkit-autofill,
+  :-webkit-autofill:hover,
+  :-webkit-autofill:focus,
+  :-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #272b3f inset;
+    -webkit-text-fill-color: var(--color-text);
+    background-color: transparent !important;
+    @-moz-document url-prefix() {
+      -webkit-box-shadow: unset;
+    }
+  }
+}
+
+.enable_button {
+  width: 208px;
+  height: 44px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}

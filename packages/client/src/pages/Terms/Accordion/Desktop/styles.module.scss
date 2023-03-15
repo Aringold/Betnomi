@@ -1,0 +1,39 @@
+.wrapper {
+  margin-top: 65px;
+  display: flex;
+}
+
+.actions {
+  width: 290px;
+  max-height: calc(100vh - 100px);
+  overflow: auto;
+  position: sticky;
+  top: 90px;
+  padding-right: 5px;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #212536;
+  }
+}
+
+.content {
+  margin-left: 35px;
+  width: calc(100% - 325px);
+  font-weight: 500;
+
+  & > p {
+    margin-top: 16px;
+
+    &:first-child {
+      margin-top: 0px;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@import "~@betnomi/libs/assets/styles/_mixins";
+@import "~@betnomi/libs/assets/styles/variables";
+
+.detailsWrap{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+
+  & > div{
+    margin-bottom: 16px;
+    @include flexbox(flex-start, space-between);
+  }
+
+  @media(min-width: 769px)  {
+    min-width: 560px;
+  }
+
+}
+
+.label{
+  font-weight: normal;
+  margin-right: 20px;
+  color: var(--color-button);
+}
+
+.coin{
+  @include flexbox(center, center);
+  img{
+    margin-right: 8px;
+  }
+}
+
+.itemContent{
+  max-width: 405px;
+  @include flexbox(flex-start, center);
+
+  svg{
+    min-width: 20px;
+    cursor: pointer;
+  }
+  svg:not(:last-child){
+    margin-right: 8px;
+  }
+}
+
+.wrapText{
+  word-break: break-word;
+  max-width: 340px;
+  text-align: right;
+  margin-right: 8px;
+}

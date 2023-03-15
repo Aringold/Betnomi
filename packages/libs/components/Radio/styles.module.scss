@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    background-color:  var(--color-radiobutton-background);
+    border-radius: 12px;
+    border: 1px solid var(--color-radiobutton-border);
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+
+    .circle {
+        width: 16px;
+        height: 16px;
+        border-radius: 8px;
+        background-color: var(--color-radiobutton-selected);
+    }
+    &:hover {
+        border: none;
+    }
+}
+
+.checked {
+    border: 1px solid var(--color-radiobutton-selected);
+    &:hover {
+        border: 1px solid var(--color-radiobutton-selected);
+    }
+}

@@ -1,0 +1,54 @@
+@import "~@betnomi/libs/assets/styles/_variables";
+@import "~@betnomi/libs/assets/styles/_mixins";
+
+.link {
+  @include flexbox(center, flex-start);
+
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: var(--weight-500);
+  color: var(--color-icon);
+  height: 44px;
+  padding-left: 9px;
+  @media(max-width: 768px) {
+    padding-left: 0px;
+  }
+}
+.text_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.text {
+  overflow: hidden;
+  flex-shrink: 0;
+  opacity: 0;
+  // animation: textFadeOut $transition-time linear forwards;
+  white-space: nowrap;
+  margin-left: 16px;
+
+  &.active {
+    animation: textFadeIn $transition-time linear forwards;
+  }
+}
+
+@keyframes textFadeIn {
+  0% {opacity: 0; visibility: hidden;}
+  100% {opacity: 1; visibility: visible;}
+}
+@keyframes textFadeOut {
+  0% {opacity: 1; visibility: visible;}
+  100% {width: 0; margin: 0; opacity: 0; visibility: hidden;}
+}
+
+.icon {
+  transition: all $transition-time;
+
+  @media(max-width: 768px) {
+    font-size: 24px !important;
+  }
+}
+
+.activeLink{
+  color: var(--color-brand);
+}

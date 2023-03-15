@@ -1,0 +1,38 @@
+@import "~@betnomi/libs/assets/styles/_mixins";
+
+.tableResponsive{
+    overflow-x: auto;
+}
+
+.tableWrap{
+  @media(max-width: 768px)  {
+      padding-bottom: 24px;
+  }
+}
+
+.filterBtn{
+    position: relative;
+    margin: 24px;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #272B3F;
+
+  @media(max-width: 374px)  {
+    margin: 16px;
+  }
+
+}
+
+.filterAmount{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #313549;
+  font-size: 12px;
+  @include flexbox(center, center);
+  border-radius: 50%;
+
+}

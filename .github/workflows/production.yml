@@ -1,0 +1,64 @@
+name: Production
+
+
+on: 
+  push:
+    branches:
+      - production
+
+env:
+    target: prod
+    project_dir: /var/www/html/betnomi-frontend
+    artifact_name: build.tar.gz
+
+jobs:
+  Build_and_deploy:
+    runs-on: [ self-hosted, linux, x64 ]
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Install yarn and deps
+        shell: bash
+        run: |
+          apt update
+          apt install nodejs npm git openssl -y --no-install-recommends
+          npm install --global yarn
+
+      - name: Build frontend
+        shell: bash
+        run: |
+          yarn install
+          yarn build:client
+
+      - name: Save build artifact
+        run: cd packages && tar -vczf ../$artifact_name */build  && cd ../ && ls ${PWD}/*
+
+
+      - name: Install ansible
+        shell: bash
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }} 
+        run: |
+          set -eu
+          apt update && apt install python3 wget openssh-client -y
+          wget -q https://bootstrap.pypa.io/get-pip.py -O /tmp/get-pip.py
+          python3 /tmp/get-pip.py
+          python3 -m pip install ansible
+          mkdir -p ~/.ssh
+          chmod 0700 ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 0600 ~/.ssh/id_rsa
+          mkdir -p /etc/ansible
+          printf "[defaults]\n
+            stdout_callback = yaml\n
+            bin_ansible_callbacks = True\n
+            host_key_checking = False" >  /etc/ansible/ansible.cfg
+
+      - name: Deploy frontend
+        run:  >
+          ansible-playbook -C .github/workflows/playbooks/deploy.yml -i .github/workflows/inventory/hosts.yml
+          -e "www_path=$project_dir"
+          -e "artifact_name=$artifact_name"
+          --limit=prod
+          -vvv

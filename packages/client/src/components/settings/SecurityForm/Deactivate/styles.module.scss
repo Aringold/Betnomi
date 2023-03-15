@@ -1,0 +1,54 @@
+.tittle {
+  display: flex;
+  margin-bottom: 16px;
+  font-weight: 500;
+  img {
+    margin-right: 14px;
+  }
+}
+
+.paragraph {
+  font-size: 14px;
+  font-weight: 400;
+  padding-bottom: 24px;
+  border-bottom: 2px dashed #313549;
+  color: #696e87;
+}
+
+.verification_wrap {
+  padding-top: 24px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
+}
+
+.verification {
+  margin: 24px 0px;
+}
+
+.password_input {
+  background-color: #272b3f;
+  margin-bottom: 32px;
+
+  :-webkit-autofill,
+  :-webkit-autofill:hover,
+  :-webkit-autofill:focus,
+  :-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #272b3f inset;
+    -webkit-text-fill-color: var(--color-text);
+    background-color: transparent !important;
+    @-moz-document url-prefix() {
+      -webkit-box-shadow: unset;
+    }
+  }
+}
+
+.enable_button {
+  width: 208px;
+  height: 44px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}

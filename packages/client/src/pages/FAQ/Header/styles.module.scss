@@ -1,0 +1,20 @@
+.wrapper{
+  width: 100%;
+  padding: 56px 0px;
+  text-align: center;
+  background-image: url("~@betnomi/libs/assets/img/contactUs/background.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  & > h2{
+    margin-top: 8px;
+    font-weight: 400;
+  }
+
+  & > div{
+    width: calc(100% - 30px);
+    margin: 24px auto 0;
+    max-width: 600px;
+  }
+}

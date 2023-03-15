@@ -1,0 +1,23 @@
+.wrap {
+    width: 100%;
+}
+
+.track_wrap {
+    height: 20px;
+    display: flex;
+    width: 100%;
+}
+
+.track {
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+    align-self: center;
+}
+
+.thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #696E87;
+}

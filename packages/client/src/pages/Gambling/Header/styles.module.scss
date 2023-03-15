@@ -1,0 +1,28 @@
+@import '../../../../../libs/assets/styles/mixins';
+@import '../../../../../libs/assets/styles/variables';
+
+.wrapper{
+  width: 100%;
+  padding: 48px 150px 28px 150px;
+  text-align: center;
+  border-bottom: 1px dashed #313549;
+  @media( min-width: 768px) and (max-width: 1200px)  {
+    padding: 48px 75px 28px 75px;
+  }
+  @media(max-width: 768px) {
+    padding: 48px 0 28px 0;
+  }
+
+  & > h1{
+    margin-bottom: 24px;
+  }
+
+  & > p{
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 24px;
+    white-space: pre-wrap;
+    font-weight: 400;
+  }
+}
+

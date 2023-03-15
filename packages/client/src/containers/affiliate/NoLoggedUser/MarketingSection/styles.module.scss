@@ -1,0 +1,210 @@
+@import "~@betnomi/libs/assets/styles/variables";
+@import "~@betnomi/libs/assets/styles/mixins";
+
+.content{
+  width: 100%;
+}
+
+.title{
+  font-weight: bold;
+  line-height: 64px;
+  margin-bottom: 12px;
+  font-size: 52px;
+
+  @media(max-width: 768px) {
+    font-size: 24px;
+  }
+}
+
+.subTitle{
+  font-weight: 300;
+  line-height: 40px;
+  margin-bottom: 24px;
+
+  font-size: 32px;
+  @media(max-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+.marketing{
+  padding: 0 30px;
+
+  .content{
+    background: #222638;
+    border-radius: 18px;
+    text-align: center;
+    padding: 120px 90px;
+    @media(min-width: 769px) and(max-width: 1000px) {
+      padding: 30px;
+    }
+  }
+
+  .showNowBtn{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    min-width: 250px;
+    margin: 65px auto 0;
+    min-height: 52px;
+    @media(max-width: 768px) {
+    margin-top: 0;
+    }
+  }
+
+  .subTitle{
+    margin-bottom: 80px;
+  }
+
+  @media(max-width: 768px) {
+    padding: 0 15px;
+
+    .content{
+      padding: 60px 25px;
+    }
+
+    .title{
+      font-size: 34px;
+      line-height: 28px;
+      margin-bottom: 16px;
+    }
+
+    .subTitle{
+      font-size: 22px;
+      line-height: 1.2;
+      margin-bottom: 35px;
+    }
+  }
+}
+
+.list{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 65px;
+  @media(max-width: 1200px) {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @media(max-width: 768px) {
+    margin-bottom: 14px;
+  }
+
+  .listItem{
+    @include flexbox(center, center);
+    flex-direction: column;
+    border-radius: 16px;
+    min-height: 145px;
+    position: relative;
+    width: 160px;
+    margin-right: 30px;
+    @media(max-width: 1200px) {
+      width: calc(100% / 3 - 15px);
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @media(max-width: 600px) {
+      width: calc(100% / 2 - 5px);
+      margin-bottom: 10px;
+      height: 121px;
+      min-height: unset;
+    }
+
+    &:after, &:before {
+      content: "";
+      position: absolute;
+      border: inherit;
+      border-bottom-left-radius: inherit;
+      border-bottom-right-radius: inherit;
+      background-color: white;
+    }
+
+    &:before {
+      width: 90%;
+      bottom: -7px;
+      height: 8px;
+    }
+    &:after {
+      width: 80%;
+      bottom: -14px;
+      height: 15px;
+    }
+
+    p{
+      margin-top: 12px;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 24px;
+      @media(max-width: 768px) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .link{
+    background: linear-gradient(179.21deg, #5368EA 0.39%, #2F43BB 76.59%);
+    &:before {
+      background-color: rgba(47,67,187, 0.4);
+    }
+    &:after {
+      background-color: rgba(47,67,187, 0.2);
+    }
+  }
+  .social{
+    background: linear-gradient(179.21deg, #A179F7 0.39%, #936BE9 76.59%);
+    &:before {
+      background-color: rgba(147,107, 233, 0.4);
+    }
+    &:after {
+      background-color: rgba(147,107, 233, 0.2);
+    }
+  }
+  .banner{
+    background: linear-gradient(179.21deg, #FFB857 0.39%, #d7871c 76.59%);
+    &:before {
+      background-color: rgba(215,135, 28, 0.4);
+    }
+    &:after {
+      background-color: rgba(215,135, 28, 0.2);
+    }
+  }
+  .media{
+    background: linear-gradient(179.21deg, #FFD674 0.39%, #F6C95D 76.59%);
+    &:before {
+      background-color: rgba(246,201, 93, 0.4);
+    }
+    &:after {
+      background-color: rgba(246,201, 93, 0.2);
+    }
+  }
+  .xml{
+    background: linear-gradient(179.21deg, #72DD3A 0.39%, #61C42E 76.59%);
+    &:before {
+      background-color: rgba(77,196, 46, 0.4);
+    }
+    &:after {
+      background-color: rgba(77,196, 46, 0.2);
+    }
+  }
+  .json{
+    background: linear-gradient(179.21deg, #52D5A6 0.39%, #49C196 76.59%);
+    &:before {
+      background-color: rgba(73,193, 150, 0.4);
+    }
+    &:after {
+      background-color: rgba(73,193, 150, 0.2);
+    }
+  }
+  .listItem {
+    &:after,&:before {
+      @media(max-width: 1200px) {
+        background-color: unset;
+      }
+    }
+  }
+}

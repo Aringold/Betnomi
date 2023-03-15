@@ -1,0 +1,126 @@
+@import "~@betnomi/libs/assets/styles/variables";
+@import "~@betnomi/libs/assets/styles/_mixins";
+
+.page {
+  padding: 32px $main_layout_padding 64px $main_layout_padding ;
+  max-width: 1500px;
+  margin: 0 auto;
+
+  @media(max-width: 768px)  {
+    padding: 25px 15px;
+  }
+}
+
+.content{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calc(50% - 24px), 1fr));
+  grid-gap: 48px;
+
+  @media(min-width: 769px) and (max-width: 1200px){
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  }
+
+  @media(max-width: 768px){
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+
+    .contentItem{
+      padding: 20px;
+    }
+  }
+  @media(max-width: 657px){
+    grid-gap: 30px;
+  }
+}
+
+.contentItem{
+  background: #1D2030;
+  border-radius: 16px;
+  padding: 7.4%;
+  @include flexbox(flex-start, center);
+
+  h2{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 16px;
+  }
+
+  p{
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  svg{
+    min-width: 62px;
+    min-height: 62px;
+    margin-right: 8.9%;
+  }
+
+  @media(max-width: 768px){
+    padding: 20px;
+  }
+  @media(max-width: 657px){
+    flex-direction: column;
+    align-items: center;
+    svg{
+      margin: 0;
+    }
+    div{
+      text-align: center;
+    }
+  }
+}
+
+.mainContentItem{
+  flex-direction: column;
+  padding: 48px;
+  margin-bottom: 48px;
+  background-color: #1D2030;
+  background-image: url("~@betnomi/libs/assets/img/aboutUs/bgr.png");
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position: 100% -60px;
+
+  & > div{
+    max-width: 650px;
+  }
+
+  h1{
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 48px;
+    margin-bottom: 24px;
+  }
+  h2{
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  p{
+    margin-bottom: 18px;
+  }
+
+  .button{
+    margin-top: 50px;
+    min-width: 200px;
+    @media(max-width: 768px){
+      width: 100%;
+    }
+  }
+
+  @media(max-width: 1299px){
+    background: url("~@betnomi/libs/assets/img/affiliate/bgr.png") no-repeat top right/contain, #1D2030;
+  }
+
+  @media(min-width: 1200px) and (max-width: 1600px) {
+    &.active{
+      background: url("~@betnomi/libs/assets/img/affiliate/bgr.png") no-repeat top right/contain, #1D2030;
+    }
+  }
+
+  @media(max-width: 768px){
+    padding: 20px;
+  }
+
+}

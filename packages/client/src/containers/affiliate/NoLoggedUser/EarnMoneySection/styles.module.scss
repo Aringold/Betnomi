@@ -1,0 +1,110 @@
+@import "~@betnomi/libs/assets/styles/variables";
+@import "~@betnomi/libs/assets/styles/mixins";
+
+.earnMoney{
+  padding: 180px 0;
+  min-height: 640px;
+  background: url("~@betnomi/libs/assets/img/affiliate/lines.png")no-repeat 50% 80%/contain;
+
+  .content{
+
+    @include flexbox(flex-end, space-between);
+    max-width: 960px;
+
+    .description{
+      max-width: 470px;
+    }
+  }
+
+  @media(max-width: 768px){
+    padding: 60px 15px;
+    background: unset;
+
+    .content{
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0;
+
+      .description{
+        margin-bottom: 50px;
+        text-align: center;
+      }
+
+      .chartImages{
+        max-width: 300px;
+        height: 300px;
+
+        .pointer{
+          margin-bottom: -210px;
+        }
+      }
+    }
+  }
+}
+
+.chartImages{
+  display: flex;
+  flex-direction: column;
+
+  img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .pointer{
+    margin-bottom: -220px;
+  }
+}
+
+.view_button{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  min-width: 270px;
+  @media(max-width: 768px){
+    width: 100%;
+  }
+}
+
+.content{
+  width: 100%;
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.title{
+  font-weight: bold;
+  line-height: 64px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+
+  @media(max-width: 768px){
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 16px;
+    span{
+      margin-bottom: 8px;
+    }
+  }
+
+  font-size: calc(24px + 28 * ((100vw - 320px) / (1440 - 320)));
+  @media(min-width: 1500px) {
+    font-size: 52px;
+  }
+
+}
+
+.text{
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #fff;
+  margin-bottom: 52px;
+  @media(max-width: 768px){
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+}

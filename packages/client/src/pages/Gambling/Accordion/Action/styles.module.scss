@@ -1,0 +1,39 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 17px 16px;
+  background: #222638;
+  border-radius: 8px;
+  margin: 4px 0px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  color: #ffffff;
+
+  &:first-child {
+    margin-top: 0px;
+  }
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+
+  & > i {
+    transition: 0.3s all;
+  }
+
+  & > div {
+    text-align: left;
+  }
+}
+
+.isOpen {
+  background-color: #6ad035;
+
+  @media (max-width: 768px) {
+    & > i {
+      transform: rotateZ(90deg);
+    }
+  }
+}

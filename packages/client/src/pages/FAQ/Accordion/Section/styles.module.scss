@@ -1,0 +1,52 @@
+.wrapper {
+  & > .action {
+    display: flex;
+    padding: 24px 0px;
+    border-bottom: 2px dashed #313549;
+    justify-content: space-between;
+    cursor: pointer;
+    color: #ffffff;
+    width: 100%;
+    font-weight: 600;
+    font-size: 24px;
+    text-align: left;
+
+    i {
+      transform: rotate(0deg);
+      transition: 0.3s all;
+    }
+  }
+
+  & > .content {
+    overflow: hidden;
+    padding: 0px;
+    max-height: 0px;
+  }
+
+  &.isActive {
+    & > .content {
+      padding: 12px 0px;
+      max-height: 2500px;
+      animation-duration: 0.5s;
+      animation-name: show;
+    }
+
+    & > .action {
+      i {
+        transform: rotate(-180deg);
+        color: #6ad035;
+      }
+    }
+  }
+}
+
+@keyframes show {
+  from {
+    padding: 0px;
+    max-height: 0px;
+  }
+  to {
+    padding: 12px 0px;
+    max-height: 1500px;
+  }
+}

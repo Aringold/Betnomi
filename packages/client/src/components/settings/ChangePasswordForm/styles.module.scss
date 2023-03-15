@@ -1,0 +1,36 @@
+.form{
+    max-width: 400px;
+  
+    .submit_button{
+      margin-top: 24px;
+      min-width: 210px;
+    }
+    @media (max-width: 768px) {
+      max-width: none;
+      .submit_button{
+        min-width: none;
+        width: 100%;
+      }
+    }
+  }
+  
+  .input{
+    background: var(--color-background-mesg);
+    margin-bottom: 16px;
+  
+    & > div {
+      border-right: 1px solid var(--color-line-1);
+    }
+  }
+  
+  .label {
+    font-weight: var(--weight-500);
+    font-size: 14px;
+    line-height: 21px;
+    color: var(--color-icon);
+    margin: 0 0 19px 0;
+    @media (max-width: 768px) {
+      margin-bottom: 10px;
+      margin-top: -10px;
+    }
+  }

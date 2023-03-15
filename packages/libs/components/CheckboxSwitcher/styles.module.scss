@@ -1,0 +1,31 @@
+@import "../../assets/styles/mixins";
+
+.checkbox {
+  width: 36px;
+  height: 24px;
+  border-radius: 50px;
+  padding-left: 4px;
+  background-color: var(--color-background-mesg);
+  transition: all 0.3s linear;
+  div {
+    background-color: var(--color-button);
+  }
+
+
+  &.checked {
+    background-color: var(--color-brand);
+    padding-left: 16px;
+    div {
+      background-color: var(--color-white);
+    }
+  }
+
+}
+
+.point {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+}
+

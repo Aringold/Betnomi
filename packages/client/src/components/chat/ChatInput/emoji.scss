@@ -1,0 +1,24 @@
+.emojiPicker {
+    position: absolute;
+    bottom: 40px;
+
+    .emoji-mart {
+        background-color: #10131E;
+        border-color: #343642;
+        svg {
+            fill:#696e87;
+        }
+    }
+    .emoji-mart-bar {
+      display: none;
+    }
+      
+    .emoji-mart-category-label {
+        background: transparent;
+        position: static;
+        & > span {
+            background: transparent;
+            color: #696E87
+        }
+    }
+  }

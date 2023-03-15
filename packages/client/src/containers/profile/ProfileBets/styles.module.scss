@@ -1,0 +1,8 @@
+
+.content{
+  padding: 17px 0 0 0;
+  //padding: 17px 32px 0 32px;
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+}

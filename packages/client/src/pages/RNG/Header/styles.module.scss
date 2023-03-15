@@ -1,0 +1,14 @@
+.wrapper{
+  width: 100%;
+  padding: 48px 0px 28px 0px;
+  text-align: center;
+  @media(max-width: 768px)  {
+    padding: 35px 0 28px 0;
+  }
+  h1{
+    margin-bottom: 24px;
+    @media(max-width: 768px)  {
+      font-size: 24px;
+    }
+  }
+}

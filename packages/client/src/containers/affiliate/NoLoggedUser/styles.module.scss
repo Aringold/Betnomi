@@ -1,0 +1,125 @@
+@import "~@betnomi/libs/assets/styles/variables";
+@import "~@betnomi/libs/assets/styles/mixins";
+
+.affiliateWrap{
+  margin: 0 auto;
+
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+}
+
+.topSection{
+  position: relative;
+  min-height: 634px;
+  display: flex;
+  align-items: center;
+  background: url("~@betnomi/libs/assets/img/affiliate/Rectangle_171.png")no-repeat 33vw 50%, url("~@betnomi/libs/assets/img/affiliate/3_1.png")no-repeat -4vw 50%;
+  @media(max-width: 991px) {
+    min-height: unset;
+    padding: 40px 0 80px;
+  }
+  .content{
+    @include flexbox(flex-end, space-between);
+
+    &.active{
+      flex-wrap: wrap;
+    }
+
+    & > div{
+      width: 570px;
+      min-width: 350px;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      @media(max-width: 991px) {
+        text-align: center;
+        margin-top: 20px;
+      }
+      @media(max-width: 991px) {
+        min-width: 320px;
+        height: unset;
+      }
+    }
+
+    img{
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    @media(max-width: 991px) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+
+  @media(max-width: 991px) {
+    background: url('~@betnomi/libs/assets/img/affiliate/Rectangle_171.png') no-repeat 50% 100%/contain, url("~@betnomi/libs/assets/img/affiliate/3_1.png") no-repeat 95% 19%;
+  }
+}
+
+.content{
+  width: 100%;
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.image{
+  max-width: 510px;
+  height: 304px;
+}
+
+.title{
+  font-weight: bold;
+  line-height: 64px;
+  margin-bottom: 8px;
+  font-size: 52px;
+  @media(max-width: 1200px) {
+    font-size: 45px;
+  }
+
+  @media(max-width: 991px) {
+    font-size: 34px;
+    line-height: 28px;
+    margin: 20px 0;
+  }
+}
+
+.subTitle{
+  font-weight: 300;
+  line-height: 40px;
+  margin-bottom: 24px;
+  @media(max-width: 1200px) {
+    font-size: 25px;
+  }
+
+  @media(max-width: 991px) {
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  font-size: 32px;
+  @media(min-width: 1500px) {
+    font-size: 32px;
+  }
+}
+
+.text {
+  font-size: 18px;
+  line-height: 24px;
+  color: #696E87;
+  margin-bottom: 10px;
+
+  @media(max-width: 991px) {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+}

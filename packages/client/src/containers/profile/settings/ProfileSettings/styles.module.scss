@@ -1,0 +1,12 @@
+.wrap {
+    padding: 32px;
+    @media (max-width: 1340px ) {
+        padding-bottom: 24px;
+    }
+    @media (max-width: 768px ) {
+        padding: 24px;
+    }
+    @media (max-width: 374px ) {
+        padding: 16px;
+    }
+}

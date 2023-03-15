@@ -1,0 +1,43 @@
+.input {
+    background-color: var(--color-background-mesg);
+    margin-bottom: 16px;
+}
+
+.sort_btn{
+    color: var(--color-button);
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.currency_wrap {
+    display: flex;
+    justify-content: space-between;
+    &:not(:last-child){
+        margin-bottom: 26px;
+
+    }
+}
+
+.icon_wrap {
+    display: flex;
+    img {
+        margin-right: 16px;
+    }
+}
+
+.switcher_wrap {
+    display: flex;
+}
+
+.full_name{
+    color: var(--color-icon);
+    margin-right: 16px;
+    font-weight: 400;
+}
+
+.coin_name {
+    font-weight: 500;
+}

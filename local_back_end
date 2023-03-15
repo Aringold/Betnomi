@@ -1,0 +1,6 @@
+REACT_APP_WEBSOCKET_URL=ws://centrifugo.betnomi.local/connection/websocket
+REACT_APP_API_URL=http://envoy.betnomi.local/
+REACT_APP_BETCONSTRUCT_API_URL=https://www.cmsbetconstruct.com/
+REACT_APP_TELEGRAM_LOGIN_BOT=betnomibot
+ESLINT_NO_DEV_ERRORS=true
+REACT_APP_TERMS_URL=/terms

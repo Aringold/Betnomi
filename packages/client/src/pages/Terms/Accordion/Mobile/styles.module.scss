@@ -1,0 +1,23 @@
+.wrapper {
+  margin-top: 32px;
+}
+
+.content {
+  display: none;
+  font-weight: 500;
+  overflow: hidden;
+  transition: max-height 0.2s all;
+  padding: 24px 0;
+
+  & > p {
+    margin-top: 24px;
+
+    &:first-child {
+      margin-top: 0px;
+    }
+  }
+}
+
+.isOpen {
+  display: block;
+}

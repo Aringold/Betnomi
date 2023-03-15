@@ -1,0 +1,26 @@
+@import "../../../../../../node_modules/@betnomi/libs/assets/styles/variables";
+@import "../../../../../../node_modules/@betnomi/libs/assets/styles/mixins";
+
+.page {
+  padding: 32px $main_layout_padding 52px $main_layout_padding ;
+  max-width: 1500px;
+  margin: 0 auto;
+
+  @media(max-width: 768px)  {
+    padding: 25px 15px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    @media(max-width: 380px)  {
+      font-size: 14px;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@import "~@betnomi/libs/assets/styles/variables";
+
+.page {
+  padding: 0 $main_layout_padding;
+  max-width: 1500px;
+  margin: 0 auto;
+
+  @media(max-width: 768px)  {
+    padding: 0;
+  }
+}
+.pageSmallScreen{
+  padding: 0 32px;
+}
+
+:global {
+  @media (min-width: 769px) {
+    .intercom-messenger-frame{
+      bottom: 0px !important;
+      z-index: 4 !important;
+      max-height: calc(100vh - 121px) !important;
+    }
+  }
+}

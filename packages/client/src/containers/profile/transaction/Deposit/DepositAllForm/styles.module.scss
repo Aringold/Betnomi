@@ -1,0 +1,121 @@
+@import "~@betnomi/libs/assets/styles/mixins";
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 16px;
+  margin: 17px 0 24px 0;
+  width: 100%;
+}
+
+.TxID {
+  flex-grow: 1;
+  min-width: 110px;
+  max-width: 220px;
+
+  input{
+    height: 44px;
+    background: var(--color-background-tabs);
+    border-radius: 4px;
+  }
+}
+
+.label {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: var(--weight-500);
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--color-icon);
+  margin-bottom: 15px;
+}
+
+.form {
+  overflow: auto;
+  @include flexbox(flex-end, space-between);
+  padding: 0 22px;
+  margin: 0 10px;
+
+  &.sportBets {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+
+    @media(max-width: 768px) {
+      .select {
+        background: var(--color-input-profile-background);
+      }
+      .submit {
+        width: 100%;
+      }
+      .label {
+        margin-bottom: 5px;
+      }
+      .result {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 0;
+      }
+      .type {
+        width: 100%;
+        margin-bottom: 0;
+      }
+      .filters{
+        flex-wrap: wrap;
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+
+      .TxID{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        max-width: unset;
+
+        input{
+          background: var(--color-input-profile-background);
+        }
+      }
+    }
+
+  }
+}
+
+.submit {
+  margin: 29px 10px 24px 10px;
+}
+
+.option {
+  @include flexbox(center, space-between);
+  
+  color: var(--color-white);
+  height: 40px;
+  padding: 12px; 
+
+  &.selected {
+    background: var(--color-select-background);
+    border-radius: 4px;
+  }
+}
+
+.check_icon {
+  color: var(--color-brand);
+}
+
+.select {
+  background: var(--color-background-tabs);
+  border-radius: 4px;
+}
+
+.coin {
+  button {
+    color: var(--color-white);
+  }
+  i {
+    color: var(--color-icon);
+  }
+}
+
+.background {
+  background-color: var(--color-input-profile-background);
+}

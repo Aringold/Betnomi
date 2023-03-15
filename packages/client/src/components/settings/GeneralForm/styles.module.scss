@@ -1,0 +1,148 @@
+@import "~@betnomi/libs/assets/styles/mixins";
+
+
+.generalContent{
+    max-width: 848px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 60px;
+    @media (max-width: 768px) {
+      padding-bottom: 0;
+    }
+}
+
+.avatarContent, .currency_content, .email_content, .password_content {
+    width: 100%;
+    max-width: 400px;
+    border-bottom: 1px dashed #313549;
+    margin-bottom: 24px;
+    padding-bottom:32px;
+    @media (max-width: 768px) {
+      max-width: none;
+    }
+  }
+  .avatarContent, .currency_content {
+    height: 200px;
+  @media (max-width: 768px) {
+   height: auto;
+  }
+  }
+
+
+  .avatarContent, .email_content {
+    margin-right: 48px;
+    @media (max-width: 768px) {
+      margin-right: 0;
+    }
+  }
+
+  .avatarContent {
+    @media (max-width: 768px) {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  .password_content {
+    @media (max-width: 768px) {
+      border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom:0;
+    }
+  }
+
+  
+.label {
+    font-weight: var(--weight-500);
+    font-size: 14px;
+    line-height: 21px;
+    color: var(--color-icon);
+    margin: 0 0 16px 0;
+    @media (max-width: 768px) {
+      text-align: center;
+      margin-bottom: 10px;
+      margin-bottom: 24px;
+    }
+  }
+
+  .avatar_label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .avatar_wrap {
+    display: flex;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+  
+  .mask {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 116px;
+    height: 116px;
+    margin-right: 32px;
+    border-radius: 50%;
+    border: 1px dashed var(--color-line-1);
+    @media (max-width: 768px) {
+      margin: 0 auto 24px;
+    }
+  }
+  
+  .avatar {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .btn_wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .btn_icon {
+    margin-right: 10px;
+  }
+  
+  .btn {
+    width: 180px;
+    height: 44px;
+    &:first-child{
+      margin-bottom: 11px;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+ 
+.currency_wrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  margin-bottom: 11px;
+}
+
+.currency_value {
+  display: flex;
+  align-items: center;
+  line-height: 18px;
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid var(--color-line-1);
+}
+
+.usd_icon {
+  margin-right: 8px;
+  color: var(--color-brand);
+}
+
+.currency_btn {
+  width: 100%;
+}

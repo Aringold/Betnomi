@@ -1,0 +1,130 @@
+@import "~@betnomi/libs/assets/styles/mixins";
+
+.wrap {
+  margin: 24px 32px 0 32px;
+}
+
+.title_wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+  padding-bottom: 32px;
+
+
+  @media(max-width: 768px){
+    flex-wrap: wrap;
+    margin: 24px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.title {
+  border-bottom: 2px dashed var(--color-line-1);
+  padding-bottom: 20px;
+  width: 100%;
+  h4 {
+    margin-bottom: 17px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  p {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--color-button);
+    max-width: 880px;
+  }
+}
+
+.content{
+  padding-bottom: 32px;
+  padding-top: 0;
+
+  .btn{
+    margin: 0 auto;
+    min-width: 210px;
+  }
+
+  @media(max-width: 768px){
+    padding: 24px;
+  }
+}
+
+.list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  grid-gap: 32px;
+  margin-bottom: 65px;
+
+  .listItem{
+    @include flexbox(center, center);
+    flex-direction: column;
+    border-radius: 16px;
+    min-height: 145px;
+    position: relative;
+
+    &:after, &:before {
+      content: "";
+      position: absolute;
+      border: inherit;
+      border-bottom-left-radius: inherit;
+      border-bottom-right-radius: inherit;
+      background-color: white;
+    }
+
+    &:before {
+      width: 90%;
+      bottom: -8px;
+      height: 8px;
+    }
+    &:after {
+      width: 80%;
+      bottom: -15px;
+      height: 15px;
+    }
+
+    p{
+      margin-top: 12px;
+    }
+
+    &:nth-child(1){
+      background: linear-gradient(179.21deg, #5368EA 0.39%, #2F43BB 76.59%);
+      &:before {
+        background-color: rgba(47,67,187, 0.4);
+      }
+      &:after {
+        background-color: rgba(47,67,187, 0.2);
+      }
+    }
+    &:nth-child(2){
+      background: linear-gradient(179.21deg, #A179F7 0.39%, #936BE9 76.59%);
+      &:before {
+        background-color: rgba(147,107, 233, 0.4);
+      }
+      &:after {
+        background-color: rgba(147,107, 233, 0.2);
+      }
+    }
+    &:nth-child(3){
+      background: linear-gradient(179.21deg, #FFD674 0.39%, #F6C95D 76.59%);
+      &:before {
+        background-color: rgba(246,201, 93, 0.4);
+      }
+      &:after {
+        background-color: rgba(246,201, 93, 0.2);
+      }
+    }
+    &:nth-child(4){
+      background: linear-gradient(179.21deg, #52D5A6 0.39%, #49C196 76.59%);
+      &:before {
+        background-color: rgba(73,193, 150, 0.4);
+      }
+      &:after {
+        background-color: rgba(73,193, 150, 0.2);
+      }
+    }
+  }
+}

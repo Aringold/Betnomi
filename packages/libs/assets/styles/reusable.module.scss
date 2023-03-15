@@ -1,0 +1,33 @@
+@import './mixins';
+@import './variables';
+
+.link {
+  @include flexbox(center, center);
+
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: var(--weight-500);
+  font-size: 14px;
+  line-height: 21px;
+  transition: all $transition-time;
+  white-space: nowrap;
+  width: 208px;
+  margin: auto;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.primary {
+    background-color: $color-button-primary;
+    color: $color-button-primary-text;
+
+    &:hover, &:focus {
+      background-color: $color-button-primary-hover;
+    }
+
+    &:disabled {
+      background-color: var(--color-brand-disabled);
+    }
+  }
+}

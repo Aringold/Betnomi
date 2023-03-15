@@ -1,0 +1,12 @@
+node_modules
+.eslintcache
+yarn-error.log
+.idea
+.DS_Store
+build.tar.gz
+build
+*firebase*
+betnomi_private_key.pem
+.env
+deploy.prod.sh
+packages/client/.env.production

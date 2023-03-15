@@ -1,0 +1,7 @@
+.basic_wrapper {
+  max-width: 560px;
+  width: 100%;
+  @media (max-width: 768px) {
+    max-width: none;
+  }
+}

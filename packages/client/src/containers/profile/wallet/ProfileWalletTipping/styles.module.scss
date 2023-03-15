@@ -1,0 +1,19 @@
+@import "~@betnomi/libs/assets/styles/mixins";
+
+.form {
+  align-items: flex-start;
+  width: 100%;
+  max-width: 360px;
+}
+
+.submit {
+  width: auto;
+  justify-self: self-start;
+  padding: 0 70px;
+}
+
+.amount {
+  & > div {
+    text-align: left;
+  }
+}

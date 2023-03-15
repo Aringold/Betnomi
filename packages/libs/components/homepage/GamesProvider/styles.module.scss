@@ -1,0 +1,184 @@
+.head {
+  box-shadow: inset var(--color-line-1) 0 -1px;
+  background-color: var(--color-background-tabs);
+  border-radius: 12px 12px 0px 0px;
+}
+
+.tabs {
+  margin-top: 96px;
+}
+
+.content {
+  margin-right: 64px;
+  @media (max-width: 768px) {
+    margin: 15px;
+  }
+}
+
+.mainTab {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: row;
+  border-bottom: 1px solid var(--color-line-1);
+}
+
+.heading {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+// table
+
+.headingFootballer {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--color-white);
+  white-space: nowrap;
+
+  @media (max-width: 768px){
+    padding-right: 15px;
+  }
+}
+
+.colorBrand {
+  color: var(--color-brand);
+}
+.colorButton {
+  color: var(--color-button);
+}
+
+// table
+
+.gmaeFlex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 10px;
+  i {
+    margin-right: 10px;
+  }
+}
+
+.gmaeMObile {
+  display: flex;
+  align-items: center;
+
+  h3 {
+    text-overflow: ellipsis;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  i {
+    margin-right: 10px;
+  }
+}
+.betDesctop {
+  display: flex;
+  align-items: center;
+  div {
+    display: flex;
+    justify-content: flex-end;
+    width: 95px;
+  }
+}
+
+.amountMobile {
+  display: flex;
+  align-items: center;
+  div {
+    display: flex;
+    justify-content: flex-end;
+    width: 115px;
+  }
+
+  @media (max-width: 768px){
+    justify-content: end;
+    -webkit-justify-content: flex-end;
+  }
+}
+
+@media (max-width: 768px){
+  .tableScr {
+    thead {
+      tr {
+        th {
+          width: calc(100%/3);
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          width: calc(100%/3);
+        }
+      }
+    }
+  }
+}
+
+.gameNameMoobile {
+  justify-content: flex-start;
+}
+
+.headingBrand {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: var(--color-brand);
+}
+
+.headingWhite {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #ffffff;
+}
+
+.headingButton {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--color-button);
+
+  &.multiplayer {
+    font-size: 16px;
+  }
+}
+
+.img {
+  margin-left: 10px;
+}
+.imgHidden {
+  height: 14px;
+  width: 14px;
+  margin-right: 10px;
+}
+
+.noMarginRight {
+  margin-right: unset;
+}
+
+@media (min-width: 768px) {
+  .tableScr {
+    overflow: scroll;
+  }
+}
+
+.tableSkeleton {
+  border-radius: 0 0 12px 12px;
+}

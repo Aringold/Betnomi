@@ -1,0 +1,94 @@
+---
+stages:
+  - build
+  - deploy
+
+
+variables:
+  FF_USE_FASTZIP: "true"
+  ARTIFACT_COMPRESSION_LEVEL: fastest # can also be set to fastest, fast, slow and slowest.
+  CACHE_COMPRESSION_LEVEL: fast
+  TRANSFER_METER_FREQUENCY: 1s
+
+  user: root
+  artifact_name: build.tar.gz
+  project_dir: /var/www/html/betnomi-frontend
+  host_file: hosts.yml
+  
+
+.vars_dev:
+  variables:
+    branch: develop
+
+.vars_prod:
+  variables:
+    branch: master
+
+.build:
+  stage: build
+  image: node:12.21.0-alpine3.11
+  before_script:
+    - apk add git openssl
+  script:
+    - yarn install --cache-folder .yarn
+    - yarn build:client
+    - chown -R 33:33 packages
+    - cd packages && tar -czf ../$artifact_name */build && cd ../
+  artifacts:
+    paths:
+      - build.tar.gz
+    expire_in: 1 day
+  tags:
+    - build
+
+
+
+.deploy:
+  stage: deploy
+  image: willhallonline/ansible:2.9-alpine
+  before_script:
+    - set -eu
+    - apk add openssh-client
+    - eval `ssh-agent -s`
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - printf "[defaults]\n
+      stdout_callback = yaml\n
+      bin_ansible_callbacks = True\n
+      host_key_checking = False" >  /etc/ansible/ansible.cfg
+  script:
+    - ansible-playbook ci_cd/deploy.yml -i ci_cd/$host_file -l $branch 
+      -e "www_path=$project_dir"
+      -e "artifact_name=$artifact_name"
+  tags:
+    - deploy
+
+
+# DEVELOP
+build_dev:
+  extends:
+    - .vars_dev
+    - .build
+  only:
+    - develop
+
+deploy_dev:
+  extends:
+   - .vars_dev
+   - .deploy
+  only:
+    - develop
+
+# MASTER
+build_prod:
+  extends:
+    - .vars_prod
+    - .build
+  only:
+    - master
+
+deploy_prod:
+  extends:
+   - .vars_prod
+   - .deploy
+  only:
+    - master

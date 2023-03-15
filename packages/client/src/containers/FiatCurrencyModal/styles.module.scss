@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 560px;
+  padding-top: 8px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.contentText {
+  color: var(--color-button);
+  font-size: 14px;
+  font-weight: 400;
+  margin: 16px 0 42px 0;
+  @media (max-width: 768px) {
+    margin: 16px 0 32px 0;
+  }
+}
+
+.selectorGrid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  margin-bottom: 40px;
+  @media (max-width: 768px) {
+    grid-template-columns: auto auto;
+    margin-bottom: 20px;
+  }
+  .currencyLabel {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+
+    .label {
+      margin: 0 8px 0 16px;
+      font-weight: 400;
+      font-size: 18px;
+    }
+  }
+}
+
+.setCurrencyButton {
+  font-weight: 500;
+}
+
+.disabledButton {
+  background-color: var(--color-gray-40) !important;
+}

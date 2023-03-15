@@ -1,0 +1,82 @@
+@import '../../../assets/styles/mixins';
+
+.wrapper {
+  overflow: hidden;
+  width: 100%;
+
+  :global {
+    .swiper-slide {
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      font-size: 18px;
+      background: transparent;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+
+      img {
+        display: block;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.pagination_padding {
+  padding-bottom: 45px;
+}
+
+.pagination {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+}
+
+.bullet {
+  cursor: pointer;
+  display: inline-block;
+  margin: 4px 6px;
+  width: 24px;
+  height: 6px;
+  background-color: var(--color-black);
+  opacity: 0.6;
+  border-radius: 2px;
+
+  &.active {
+    background: var(--color-vip);
+    box-shadow: 0 0 12px rgba(109, 211, 56, 0.34);
+    opacity: 1;
+  }
+}
+
+.banner {
+  border-radius: 14px;
+  height: auto;
+  width: 100%;
+  // object-position: right;
+  cursor: pointer;
+}
+
+.bannerFront {
+  position: absolute;
+  right: 0;
+  // top: 50%;
+  height: 95%;
+  // width: 57vw;
+  // max-width: 500px;
+
+  // @media(min-width: 1440px)  {
+  //   max-width: 500px;
+  // }
+}

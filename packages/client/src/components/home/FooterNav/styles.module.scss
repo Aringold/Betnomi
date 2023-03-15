@@ -1,0 +1,38 @@
+@import "../../../../../../node_modules/@betnomi/libs/assets/styles/mixins";
+
+.nav {
+	@include flexbox(flex-start, space-between);
+	margin-bottom: 33px;
+	
+	@media(max-width: 1000px) {
+		flex-wrap: wrap;
+
+		& > div{
+			flex-basis: 50%;
+			margin-bottom: 32px;
+		}
+	}
+
+	@media(max-width: 374px) {
+		margin-bottom: 0;
+	}
+}
+
+.navBase{
+	@include flexbox(flex-start, space-between);
+	margin-bottom: 33px;
+
+  @media(max-width: 1000px) {
+	  flex-wrap: wrap;
+
+		& > div{
+			flex-basis: 50%;
+			margin-bottom: 32px;
+		}
+  }
+
+  @media(max-width: 374px) {
+		margin-bottom: 0;
+	}
+}
+

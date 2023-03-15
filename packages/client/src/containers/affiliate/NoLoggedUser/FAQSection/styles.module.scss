@@ -1,0 +1,150 @@
+@import "~@betnomi/libs/assets/styles/variables";
+@import "~@betnomi/libs/assets/styles/mixins";
+
+.content{
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.title{
+  font-weight: bold;
+  line-height: 64px;
+  margin-bottom: 12px;
+  color: #fff;
+
+    font-size: calc(24px + 28 * ((100vw - 320px) / (1440 - 320)));
+  @media(min-width: 1500px) {
+    font-size: 52px;
+  }
+}
+
+.subTitle{
+  font-weight: 300;
+  line-height: 40px;
+  margin-bottom: 80px;
+  font-family: Poppins;
+
+    font-size: calc(20px + 12 * ((100vw - 320px) / (1440 - 320)));
+  @media(min-width: 1500px) {
+    font-size: 32px;
+  }
+}
+
+.faqListWrap{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+
+  @media(max-width: 1200px) {
+    flex-direction: column;
+  }
+
+  @media(max-width: 768px) {
+    & > div{
+      width: 100%;
+    }
+  }
+
+  @media(min-width: 1200px) {
+    & > div{
+      width: calc(50% - 15px);
+    }
+  }
+
+}
+
+.faq{
+  padding: 120px 0 100px;
+
+  @media(max-width: 768px) {
+    padding: 60px 0;
+
+    .content{
+      padding: 0 15px;
+    }
+
+    .title{
+      font-size: 24px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .subTitle{
+      font-size: 14px;
+      line-height: 28px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .subTitle{
+      line-height: 18px;
+      margin-bottom: 60px;
+    }
+
+    .faqList{
+      grid-template-columns: repeat(auto-fill, 1fr);
+      grid-gap: 16px;
+    }
+  }
+
+  @media(min-width: 769px) and (max-width: 1200px) {
+    .faqList{
+      grid-template-columns: repeat(auto-fill, 100%);
+      grid-gap: 12px;
+    }
+  }
+}
+
+.faqList{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 16px 30px;
+  margin-bottom: 16px;
+}
+
+.faqItem {
+  border: 2px solid #222638;
+  border-radius: 16px;
+
+  .faqTitle {
+    padding: 14px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    @include flexbox(center, space-between);
+  }
+
+  .faqBody{
+    font-weight: 400;
+    font-size: 14px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+
+    &.active{
+      max-height: 200px;
+    }
+
+    p{
+      border-top: 1px solid #222638;
+      padding: 10px;
+    }
+  }
+
+  .icon{
+    cursor: pointer;
+    @include flexbox(center, center);
+    min-width: 44px;
+    min-height: 44px;
+    background: #222638;
+    border-radius: 12px;
+    font-size: 28px;
+    line-height: 0.5;
+    font-weight: 600;
+    margin-left: 5px;
+  }
+}

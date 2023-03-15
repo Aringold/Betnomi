@@ -1,0 +1,98 @@
+@import "~@betnomi/libs/assets/styles/mixins";
+
+.wrap {
+  @include flexbox(stretch, space-between);
+  width: 100%;
+  max-height: 0px;
+  overflow: hidden;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  background-color: var(--color-sports-row-desc-background);
+  transition-property: max-height;
+  transition-duration: 0.5s;
+  transition-delay: 0s;
+  &.active{
+  max-height: 250px;
+  transition-delay: 0s;
+}
+}
+
+.left_panel {
+  width: 100%;
+  padding: 16px 25px 16px 32px;
+  border-right: 1px solid var(--color-menu-lang-switch);
+  color: var(--color-button);
+}
+
+.value {
+  @include flexbox(center, flex-start);
+  margin-bottom: 4px;
+
+  .row{
+    min-width: 200px;
+    margin-bottom: 15px;
+
+    &:not(:last-child){
+      margin-right: 48px;
+    }
+  }
+
+}
+.range {
+  margin-bottom: 10px;
+}
+
+.info_wrap{
+  display: flex;
+  align-items: flex-start;
+
+  & > div{
+    margin-right: 48px;
+  }
+
+  .row{
+    margin-bottom: 10px;
+    min-width: 200px;
+  }
+
+}
+
+.date_wrap {
+  background: #292E42;
+  border: 1px solid #313549;
+  border-radius: 8px;
+  min-width: 200px;
+  padding: 13px;
+  @include flexbox(flex-start);
+  flex-direction: column;
+
+  p{
+    @include flexbox(center, center);
+    display: inline-flex;
+    &:not(:last-child){
+      margin-bottom: 8px;
+    }
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #fff;
+
+    img{
+      margin-left: 6px;
+    }
+  }
+}
+
+.white_color {
+  margin-left: 4px;
+  color: var(--color-white);
+}
+
+.row_wrap {
+  @include flexbox (center, stretch);
+  img {
+    margin-left: 8px;
+  }
+}

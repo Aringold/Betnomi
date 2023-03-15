@@ -1,0 +1,36 @@
+
+.timer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    min-width: 200px;
+
+    @media(max-width: 374px) {
+        min-width: 165px;
+    }
+}
+
+.timer_value {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 45px;
+
+    @media(max-width: 374px) {
+        font-size: 22px;
+    }
+}
+
+.timer_description {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: var(--color-icon);
+}
+
+.seperator {
+    margin: 0 4px;
+
+    @media(max-width: 374px) {
+        margin: 0;
+    }
+}

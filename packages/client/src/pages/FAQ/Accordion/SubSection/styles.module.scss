@@ -1,0 +1,64 @@
+.wrapper {
+  margin-top: 16px;
+
+  &:first-child {
+    margin-top: 0px;
+  }
+
+  & > .action {
+    display: flex;
+    padding: 16px 24px;
+    justify-content: space-between;
+    cursor: pointer;
+    color: #ffffff;
+    width: 100%;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 8px;
+    background: #222638;
+    text-align: left;
+
+    i {
+      transform: rotate(0deg);
+      transition: 0.3s all;
+    }
+  }
+
+  & > .content {
+    overflow: hidden;
+    padding: 0px;
+    max-height: 0px;
+
+    & > p {
+      font-weight: 400;
+      padding-left: 24px;
+    }
+  }
+
+  &.isActive {
+    & > .content {
+      padding: 12px 0px;
+      max-height: 2500px;
+      animation-duration: 0.3s;
+      animation-name: show;
+    }
+
+    & > .action {
+      i {
+        transform: rotate(-180deg);
+        color: #6ad035;
+      }
+    }
+  }
+}
+
+@keyframes show {
+  from {
+    padding: 0px;
+    max-height: 0px;
+  }
+  to {
+    padding: 12px 0px;
+    max-height: 1500px;
+  }
+}
